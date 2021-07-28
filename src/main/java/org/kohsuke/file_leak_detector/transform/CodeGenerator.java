@@ -113,7 +113,7 @@ public class CodeGenerator extends MethodVisitor {
         Label tail = new Label();
         visitTryCatchBlock(s,e,h,"java/lang/Exception");
         visitLabel(s);
-        // [RESULT] m = ClassLoader.getSystemClassLoadeR().loadClass($userClassName).getDeclaredMethod($userMethodName,[...]);
+        // [RESULT] m = ClassLoader.getSystemClassLoader().loadClass($userClassName).getDeclaredMethod($userMethodName,[...]);
         visitMethodInsn(INVOKESTATIC,"java/lang/ClassLoader","getSystemClassLoader","()Ljava/lang/ClassLoader;", false);
         ldc(userClassName);
         invokeVirtual("java/lang/ClassLoader","loadClass","(Ljava/lang/String;)Ljava/lang/Class;");

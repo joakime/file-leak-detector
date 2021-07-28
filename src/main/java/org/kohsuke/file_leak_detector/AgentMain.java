@@ -280,7 +280,7 @@ public class AgentMain
             new ClassTransformSpec(AbstractInterruptibleChannel.class,
                 new CloseInterceptor("close")),
 
-            /**
+            /*
              * Detect selectors, which may open native pipes and anonymous inodes for event polling.
              */
             new ClassTransformSpec(AbstractSelector.class,
